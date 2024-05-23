@@ -1,0 +1,90 @@
+====
+compartment config
+====
+{
+  "compartments_configuration": {
+    "enable_delete": true,
+    "compartments": {
+      "CMP-NETWORK-KEY": {
+        "name": "cmp-network",
+        "description": "oci-learn-lz Shared Network Compartment"
+      }
+    }
+  }
+}
+---
+
+(document
+  (compartmentConfiguration
+    (compartmentConfigurationObject
+      enable_delete: (bool
+        (true))
+      (compartments
+        (string_content)
+        (compartment
+          name: (string
+            (string_content))
+          description: (string
+            (string_content)))))))
+
+===
+compartment with children compartment
+===
+{
+  "compartments_configuration": {
+    "enable_delete": true,
+    "compartments": {
+      "CMP-CHANNELS-KEY": {
+        "name": "cmp-channels",
+        "description": "oci-learn-lz Channels Domain dedicated Compartment",
+        "children": {
+          "CMP-CHANNELS-NETWORK-KEY": {
+            "name": "cmp-channels-network",
+            "description": "oci-learn-lz Channels domain shared networking compartment within the domain"
+          },
+          "CMP-CHANNELS-NONPROD-KEY": {
+            "name": "cmp-channels-nonprod",
+            "description": "oci-learn-lz Channels domain for non-prod environment compartment"
+          },
+          "CMP-CHANNELS-PROD-KEY": {
+            "name": "cmp-channels-prod",
+            "description": "oci-learn-lz Channels domain for prod environment compartment"
+          }
+        }
+      }
+    }
+  }
+}
+---
+
+(document
+  (compartmentConfiguration
+    (compartmentConfigurationObject
+      enable_delete: (bool
+        (true))
+      (compartments
+        (string_content)
+        (compartment
+          name: (string
+            (string_content))
+          description: (string
+            (string_content))
+          (compartments
+            (string_content)
+            (compartment
+              name: (string
+                (string_content))
+              description: (string
+                (string_content)))
+            (string_content)
+            (compartment
+              name: (string
+                (string_content))
+              description: (string
+                (string_content)))
+            (string_content)
+            (compartment
+              name: (string
+                (string_content))
+              description: (string
+                (string_content)))))))))

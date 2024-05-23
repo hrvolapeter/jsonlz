@@ -1,0 +1,3 @@
+; highlights.scm
+
+(compartmentConfiguration) @keyword

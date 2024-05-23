@@ -1,0 +1,22 @@
+==================
+Empty
+==================
+
+{}
+
+---
+
+(document)
+
+====
+Empty with inner
+====
+{
+    "compartments_configuration": {}
+}
+---
+
+(document
+  (compartmentConfiguration
+    (compartmentConfigurationObject)))
+
