@@ -24,7 +24,8 @@ module.exports = grammar({
     document: $ =>  object(commaSep($._lzRootStatement)),
 
     _lzRootStatement: $ => choice(
-      $.compartmentConfiguration,
+      seq($.compartmentConfiguration,':', $.compartmentConfigurationObject),
+      seq($.networkConfiguration,':', $.networkConfigurationObject),
       $.groupsConfiguration,
       $.dynamicGroupsConfiguration,
       $.policiesConfiguration
@@ -100,18 +101,25 @@ module.exports = grammar({
 
     null: _ => 'null',
 
-    compartmentConfiguration: $ => seq('"compartments_configuration":', $.compartmentConfigurationObject),
+    compartmentConfiguration: $ => '"compartments_configuration"',
+    compartments: $ => '"compartments"',
+    name: $ => '"name"',
+    description: $ => '"description"',
+    children: _ => '"children"',
+    id: $ => $.string,
 
     compartmentConfigurationObject: $ => object(commaSep(choice(
-      seq('"enable_delete":',field('enable_delete', $.bool)),
-      seq('"compartments"',':', $.compartments)
+      seq($.enableDelete,':',field('enable_delete', $.bool)),
+      seq($.compartments,':', $.compartmentsObj)
     ))),
 
-    compartments: $ => object(commaSep(seq('"',$._string_content,'":', $.compartment))),
+    enableDelete: _ => '"enable_delete"',
+
+    compartmentsObj: $ => object(commaSep(seq($.id,':', $.compartment))),
     compartment: $ => object(commaSep(choice(
-      seq('"name":', field('name',$.string)),
-      seq('"description":', field('description',$.string)),
-      seq('"children":', $.compartments),
+      seq($.name,':', field('name',$.string)),
+      seq($.description,':', field('description',$.string)),
+      seq($.children, ':', $.compartmentsObj),
     ))),
 
     groupsConfiguration: _ => 'groups_configuration',

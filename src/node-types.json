@@ -97,22 +97,19 @@
       "required": false,
       "types": [
         {
-          "type": "compartments",
+          "type": "children",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "compartmentConfiguration",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
+        },
         {
-          "type": "compartmentConfigurationObject",
+          "type": "compartmentsObj",
+          "named": true
+        },
+        {
+          "type": "description",
+          "named": true
+        },
+        {
+          "type": "name",
           "named": true
         }
       ]
@@ -140,12 +137,20 @@
         {
           "type": "compartments",
           "named": true
+        },
+        {
+          "type": "compartmentsObj",
+          "named": true
+        },
+        {
+          "type": "enableDelete",
+          "named": true
         }
       ]
     }
   },
   {
-    "type": "compartments",
+    "type": "compartmentsObj",
     "named": true,
     "fields": {},
     "children": {
@@ -157,11 +162,7 @@
           "named": true
         },
         {
-          "type": "escape_sequence",
-          "named": true
-        },
-        {
-          "type": "string_content",
+          "type": "id",
           "named": true
         }
       ]
@@ -180,6 +181,10 @@
           "named": true
         },
         {
+          "type": "compartmentConfigurationObject",
+          "named": true
+        },
+        {
           "type": "dynamicGroupsConfiguration",
           "named": true
         },
@@ -189,6 +194,21 @@
         },
         {
           "type": "policiesConfiguration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -259,34 +279,6 @@
     "named": false
   },
   {
-    "type": "\":",
-    "named": false
-  },
-  {
-    "type": "\"children\":",
-    "named": false
-  },
-  {
-    "type": "\"compartments\"",
-    "named": false
-  },
-  {
-    "type": "\"compartments_configuration\":",
-    "named": false
-  },
-  {
-    "type": "\"description\":",
-    "named": false
-  },
-  {
-    "type": "\"enable_delete\":",
-    "named": false
-  },
-  {
-    "type": "\"name\":",
-    "named": false
-  },
-  {
     "type": ",",
     "named": false
   },
@@ -303,11 +295,31 @@
     "named": false
   },
   {
+    "type": "children",
+    "named": true
+  },
+  {
     "type": "comment",
     "named": true
   },
   {
+    "type": "compartmentConfiguration",
+    "named": true
+  },
+  {
+    "type": "compartments",
+    "named": true
+  },
+  {
+    "type": "description",
+    "named": true
+  },
+  {
     "type": "dynamicGroupsConfiguration",
+    "named": true
+  },
+  {
+    "type": "enableDelete",
     "named": true
   },
   {
@@ -320,6 +332,10 @@
   },
   {
     "type": "groupsConfiguration",
+    "named": true
+  },
+  {
+    "type": "name",
     "named": true
   },
   {

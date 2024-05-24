@@ -17,6 +17,5 @@ Empty with inner
 ---
 
 (document
-  (compartmentConfiguration
-    (compartmentConfigurationObject)))
-
+  (compartmentConfiguration)
+  (compartmentConfigurationObject))

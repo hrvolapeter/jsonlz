@@ -51,8 +51,21 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "compartmentConfiguration"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "compartmentConfiguration"
+            },
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "compartmentConfigurationObject"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -544,17 +557,28 @@
       "value": "null"
     },
     "compartmentConfiguration": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\"compartments_configuration\":"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "compartmentConfigurationObject"
-        }
-      ]
+      "type": "STRING",
+      "value": "\"compartments_configuration\""
+    },
+    "compartments": {
+      "type": "STRING",
+      "value": "\"compartments\""
+    },
+    "name": {
+      "type": "STRING",
+      "value": "\"name\""
+    },
+    "description": {
+      "type": "STRING",
+      "value": "\"description\""
+    },
+    "children": {
+      "type": "STRING",
+      "value": "\"children\""
+    },
+    "id": {
+      "type": "SYMBOL",
+      "name": "string"
     },
     "compartmentConfigurationObject": {
       "type": "SEQ",
@@ -576,8 +600,12 @@
                       "type": "SEQ",
                       "members": [
                         {
+                          "type": "SYMBOL",
+                          "name": "enableDelete"
+                        },
+                        {
                           "type": "STRING",
-                          "value": "\"enable_delete\":"
+                          "value": ":"
                         },
                         {
                           "type": "FIELD",
@@ -593,8 +621,8 @@
                       "type": "SEQ",
                       "members": [
                         {
-                          "type": "STRING",
-                          "value": "\"compartments\""
+                          "type": "SYMBOL",
+                          "name": "compartments"
                         },
                         {
                           "type": "STRING",
@@ -602,7 +630,7 @@
                         },
                         {
                           "type": "SYMBOL",
-                          "name": "compartments"
+                          "name": "compartmentsObj"
                         }
                       ]
                     }
@@ -624,8 +652,12 @@
                             "type": "SEQ",
                             "members": [
                               {
+                                "type": "SYMBOL",
+                                "name": "enableDelete"
+                              },
+                              {
                                 "type": "STRING",
-                                "value": "\"enable_delete\":"
+                                "value": ":"
                               },
                               {
                                 "type": "FIELD",
@@ -641,8 +673,8 @@
                             "type": "SEQ",
                             "members": [
                               {
-                                "type": "STRING",
-                                "value": "\"compartments\""
+                                "type": "SYMBOL",
+                                "name": "compartments"
                               },
                               {
                                 "type": "STRING",
@@ -650,7 +682,7 @@
                               },
                               {
                                 "type": "SYMBOL",
-                                "name": "compartments"
+                                "name": "compartmentsObj"
                               }
                             ]
                           }
@@ -672,7 +704,11 @@
         }
       ]
     },
-    "compartments": {
+    "enableDelete": {
+      "type": "STRING",
+      "value": "\"enable_delete\""
+    },
+    "compartmentsObj": {
       "type": "SEQ",
       "members": [
         {
@@ -689,16 +725,12 @@
                   "type": "SEQ",
                   "members": [
                     {
-                      "type": "STRING",
-                      "value": "\""
-                    },
-                    {
                       "type": "SYMBOL",
-                      "name": "_string_content"
+                      "name": "id"
                     },
                     {
                       "type": "STRING",
-                      "value": "\":"
+                      "value": ":"
                     },
                     {
                       "type": "SYMBOL",
@@ -719,16 +751,12 @@
                         "type": "SEQ",
                         "members": [
                           {
-                            "type": "STRING",
-                            "value": "\""
-                          },
-                          {
                             "type": "SYMBOL",
-                            "name": "_string_content"
+                            "name": "id"
                           },
                           {
                             "type": "STRING",
-                            "value": "\":"
+                            "value": ":"
                           },
                           {
                             "type": "SYMBOL",
@@ -772,8 +800,12 @@
                       "type": "SEQ",
                       "members": [
                         {
+                          "type": "SYMBOL",
+                          "name": "name"
+                        },
+                        {
                           "type": "STRING",
-                          "value": "\"name\":"
+                          "value": ":"
                         },
                         {
                           "type": "FIELD",
@@ -789,8 +821,12 @@
                       "type": "SEQ",
                       "members": [
                         {
+                          "type": "SYMBOL",
+                          "name": "description"
+                        },
+                        {
                           "type": "STRING",
-                          "value": "\"description\":"
+                          "value": ":"
                         },
                         {
                           "type": "FIELD",
@@ -806,12 +842,16 @@
                       "type": "SEQ",
                       "members": [
                         {
+                          "type": "SYMBOL",
+                          "name": "children"
+                        },
+                        {
                           "type": "STRING",
-                          "value": "\"children\":"
+                          "value": ":"
                         },
                         {
                           "type": "SYMBOL",
-                          "name": "compartments"
+                          "name": "compartmentsObj"
                         }
                       ]
                     }
@@ -833,8 +873,12 @@
                             "type": "SEQ",
                             "members": [
                               {
+                                "type": "SYMBOL",
+                                "name": "name"
+                              },
+                              {
                                 "type": "STRING",
-                                "value": "\"name\":"
+                                "value": ":"
                               },
                               {
                                 "type": "FIELD",
@@ -850,8 +894,12 @@
                             "type": "SEQ",
                             "members": [
                               {
+                                "type": "SYMBOL",
+                                "name": "description"
+                              },
+                              {
                                 "type": "STRING",
-                                "value": "\"description\":"
+                                "value": ":"
                               },
                               {
                                 "type": "FIELD",
@@ -867,12 +915,16 @@
                             "type": "SEQ",
                             "members": [
                               {
+                                "type": "SYMBOL",
+                                "name": "children"
+                              },
+                              {
                                 "type": "STRING",
-                                "value": "\"children\":"
+                                "value": ":"
                               },
                               {
                                 "type": "SYMBOL",
-                                "name": "compartments"
+                                "name": "compartmentsObj"
                               }
                             ]
                           }

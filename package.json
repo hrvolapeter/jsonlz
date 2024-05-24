@@ -41,10 +41,9 @@
       "file-types": [
         "jsonlz"
       ],
-      "injection-regex": "^jsonlz$",
-      "highlights": [
-        "queries/highlights.scm"
-      ]
+      "injection-regex": "jsonlz",
+      "highlights": "queries/highlights.scm",
+      "tags": "queries/tags.scm"
     }
   ]
 }

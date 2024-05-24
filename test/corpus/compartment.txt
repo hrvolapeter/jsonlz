@@ -15,17 +15,23 @@ compartment config
 ---
 
 (document
-  (compartmentConfiguration
-    (compartmentConfigurationObject
-      enable_delete: (bool
-        (true))
-      (compartments
-        (string_content)
-        (compartment
-          name: (string
-            (string_content))
-          description: (string
-            (string_content)))))))
+  (compartmentConfiguration)
+  (compartmentConfigurationObject
+    (enableDelete)
+    enable_delete: (bool
+      (true))
+    (compartments)
+    (compartmentsObj
+      (id
+        (string
+          (string_content)))
+      (compartment
+        (name)
+        name: (string
+          (string_content))
+        (description)
+        description: (string
+          (string_content))))))
 
 ===
 compartment with children compartment
@@ -58,33 +64,52 @@ compartment with children compartment
 ---
 
 (document
-  (compartmentConfiguration
-    (compartmentConfigurationObject
-      enable_delete: (bool
-        (true))
-      (compartments
-        (string_content)
-        (compartment
-          name: (string
-            (string_content))
-          description: (string
-            (string_content))
-          (compartments
-            (string_content)
-            (compartment
-              name: (string
-                (string_content))
-              description: (string
-                (string_content)))
-            (string_content)
-            (compartment
-              name: (string
-                (string_content))
-              description: (string
-                (string_content)))
-            (string_content)
-            (compartment
-              name: (string
-                (string_content))
-              description: (string
-                (string_content)))))))))
+  (compartmentConfiguration)
+  (compartmentConfigurationObject
+    (enableDelete)
+    enable_delete: (bool
+      (true))
+    (compartments)
+    (compartmentsObj
+      (id
+        (string
+          (string_content)))
+      (compartment
+        (name)
+        name: (string
+          (string_content))
+        (description)
+        description: (string
+          (string_content))
+        (children)
+        (compartmentsObj
+          (id
+            (string
+              (string_content)))
+          (compartment
+            (name)
+            name: (string
+              (string_content))
+            (description)
+            description: (string
+              (string_content)))
+          (id
+            (string
+              (string_content)))
+          (compartment
+            (name)
+            name: (string
+              (string_content))
+            (description)
+            description: (string
+              (string_content)))
+          (id
+            (string
+              (string_content)))
+          (compartment
+            (name)
+            name: (string
+              (string_content))
+            (description)
+            description: (string
+              (string_content))))))))
